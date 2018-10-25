@@ -1,0 +1,20 @@
+@import "~@angular/material/_theming";
+
+@include mat-core();
+
+// Define Custom Theme
+$app-primary: mat-palette($mat-blue, 600);
+$app-accent: mat-palette($mat-yellow, 700);
+$app-warb: mat-palette($mat-red);
+
+// $app-theme: mat-light-theme($app-primary, $app-accent, $app-warb);
+$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warb);
+
+@include angular-material-theme($app-theme);
+
+//Define Custom Font
+$app-typography: mat-typography-config(
+    $font-family: '"Open Sans", "Helvitica Neue", "sans-serif"' 
+);
+
+@include angular-material-typography($app-typography);
