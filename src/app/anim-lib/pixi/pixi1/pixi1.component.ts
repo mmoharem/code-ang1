@@ -23,7 +23,8 @@ export class Pixi1Component implements OnInit, AfterViewInit {
   stTextArr = [];
   text: Text;
   TextArr = [];
-  dx;
+  dx = 30;
+  dxArr = [];
   dy;
 
 
@@ -105,20 +106,25 @@ export class Pixi1Component implements OnInit, AfterViewInit {
 
     // const textObj =  new PIXI.Text(newtext, style);
   
-    this.stTextArr.forEach((tex, i) => {
-      this.TextArr.push(new PIXI.Text(tex, style));
+    this.stTextArr.forEach((str, i) => {
+      this.stTextArr.push(new PIXI.Text(str, style));
+      this.dxArr.push(this.dx += 30);
     });
 
+    this.updateText();
     // const newtext = newArr.join('');
 
     
     // text.anchor.set(0.5);
     
-    this.container.addChild(text);
+    // this.container.addChild(text);
   }
 
   updateText() {
-
+    console.log(this.stTextArr);
+    console.log(this.dxArr);
+    
+    
   }
 
 }
