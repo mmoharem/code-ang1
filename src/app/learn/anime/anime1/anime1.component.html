@@ -1,0 +1,15 @@
+<!-- <div>
+  <button 
+    (click)="angAnime($event)"
+  #button1>button-1</button>
+</div> -->
+<div>
+    <header>
+      <span class="title">Dashboard</span>
+      <div class="image-container" (click)="toggleProfileDetails()" data-tooltip="Profile" >
+        <img class="profile-button" src="../../../../assets/img/prof1.png" />
+      </div>
+    </header>
+    
+    <profile-details [user]="user" *ngIf="showProfileDetails"></profile-details>
+  </div>

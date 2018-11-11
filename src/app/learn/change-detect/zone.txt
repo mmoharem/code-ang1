@@ -1,0 +1,88 @@
+// 1- without zone
+    function doSomething() {
+    console.log('Async task');
+    }
+
+    // start timer
+    start = timer();
+    foo();
+    setTimeout(doSomething, 2000); // will not count 
+    bar();
+    baz();
+    // stop timer
+    time = timer() - start;
+
+// 2- with zone
+    function main() {
+    foo();
+    setTimeout(doSomething, 2000);
+    bar();
+    baz();
+    }
+
+    zone.run(main);
+
+// 3- zone fork
+
+    var myZone = zone.fork();
+
+    myZone.run(main);
+
+1- onZoneCreated - Runs when zone is forked
+2- beforeTask - Runs before a function called with zone.run is executed
+3- afterTask - Runs after a function in the zone runs
+4- onError - Runs when a function passed to zone.run will throw
+
+    var myZoneSpec = {
+    beforeTask: function () {
+        console.log('Before task');
+    },
+    afterTask: function () {
+        console.log('After task');
+    }
+    };
+
+    var myZone = zone.fork(myZoneSpec);
+    myZone.run(main);
+
+    // Logs:
+    // Before task
+    // After task
+    // Before task
+    // Async task
+    // After task
+
+4- other zone Monkey-patched Hooks
+
+1- Zone.setInterval()
+2- Zone.alert()
+3- Zone.prompt()
+4- Zone.requestAnimationFrame()
+5- Zone.addEventListener()
+6- Zone.removeEventListener()
+
+// 5- create a zone that profiles the CPU time:
+
+    var profilingZone = (function () {
+    var time = 0,
+        timer = performance ?
+                    performance.now.bind(performance) :
+                    Date.now.bind(Date);
+    return {
+        beforeTask: function () {
+        this.start = timer();
+        },
+        afterTask: function () {
+        time += timer() - this.start;
+        },
+        time: function () {
+        return Math.floor(time*100) / 100 + 'ms';
+        },
+        reset: function () {
+        time = 0;
+        }
+    };
+    }());
+
+/////////  Zones in angular  /////////////////
+

@@ -1,6 +1,8 @@
 import { Component, OnInit, Renderer2, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Application, Container, Text } from 'pixi.js';
+import { TweenMax } from 'gsap';
 declare var PIXI: any;
+
 
 // declare var app: any;
 
@@ -16,6 +18,7 @@ export class Pixi1Component implements OnInit, AfterViewInit {
 
   app: Application;
   container: Container;
+  ticker = new PIXI.ticker.Ticker();
   resolution: number = 1;
   canvasW;
   canvasH;
@@ -37,6 +40,8 @@ export class Pixi1Component implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.initPixi();
     this.createText();
+    // this.random();
+    // this.ticker.start();
   }
 
   initPixi() {
@@ -90,8 +95,8 @@ export class Pixi1Component implements OnInit, AfterViewInit {
       // fontStyle: 'italic',
       fontWeight: 'bold',
       // fill: ['#ffffff', '#00ff99'], // gradient
-      fill: ['#000000'],
-      // stroke: '#4a1850',
+      // fill: ['#000000'],
+      // stroke: #000000',
       // strokeThickness: 5,
       // dropShadow: true,
       // dropShadowColor: '#000000',
@@ -102,17 +107,18 @@ export class Pixi1Component implements OnInit, AfterViewInit {
       wordWrapWidth: 440
     });
 
-    this.stTextArr = Array.from('Welcon To Code Design');
+    this.stTextArr = Array.from('Welcom To Code Design');
 
     // const textObj =  new PIXI.Text(newtext, style);
   
     this.stTextArr.forEach((str, i) => {
-      this.stTextArr.push(new PIXI.Text(str, style));
-      this.dxArr.push(this.dx += 30);
+      this.TextArr.push(new PIXI.Text(str, style));
+      this.dxArr.push(this.dx += 25);
     });
 
-    this.updateText();
-    // const newtext = newArr.join('');
+    // this.updateText();
+    // this.random();
+    this.ticker.add(this.random, this);
 
     
     // text.anchor.set(0.5);
@@ -121,10 +127,50 @@ export class Pixi1Component implements OnInit, AfterViewInit {
   }
 
   updateText() {
-    console.log(this.stTextArr);
-    console.log(this.dxArr);
+    // console.log(this.stTextArr);
+    // console.log(this.dxArr);
+
+    
+
+    
     
     
   }
 
+
+
+  random() {
+    let tt;
+    for(let i = 0; i <= 20; i++) {
+      // tt = new PIXI.Text(this.stTextArr[i]);
+      tt = this.TextArr[i];
+      tt.x = this.rand(0, 300);
+      tt.y = this.rand(0, 300);
+      // console.log(tt);
+      
+      this.container.addChild(tt);
+    }
+  }
+
+  rand(min, max){
+    return (Math.random() * (max - min)) + min;
+  }
+
+  initial() {
+    let tt;
+    for(let i = 0; i <= 20; i++) {
+      tt = new PIXI.Text(this.stTextArr[i]);
+      tt.x = this.dxArr[i];
+      console.log(tt);
+      
+      this.container.addChild(tt);
+    }
+  }
+
+  anime() {
+
+    
+  }
+
+  
 }

@@ -1,0 +1,7 @@
+<div class="canvas"
+  #canvas
+  (window:resize)="onResize()"
+  (mouseenter)="status = true"
+  (mouseleave)="status = false"
+  (mousemove)="mousemove($event)"  
+></div>

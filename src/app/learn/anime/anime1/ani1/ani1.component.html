@@ -1,0 +1,57 @@
+<!-- <div class="wrapper" #wrapper>
+  <header #header>
+    <div class="profile-image-wrapper">
+      <div class="profile-image-border" #profileImageBorder></div>
+      <img src="../../../../../assets/img/prof2.png" alt="" class="profile-img" #profileImage>
+    </div>
+    <div class="profile-header-content">
+      <span class="username" #username>{{ user.name }}</span>
+      <span class="username-tilte" #title>{{ user.title }}</span>
+    </div>
+  </header>
+  <main #main>
+    <ul class="stats">
+      <li class="stats-item">
+        <span class="stats-icon icon-eye" #statsIcon></span>
+        <span #statsText>{{ user.view }}</span>
+      </li>
+      <li class="stats-item">
+        <span class="stats-icon icon-location" #statsIcon></span>
+        <span #statsText>{{ user.location }}</span>
+      </li>
+      <li class="stats-item">
+        <span class="stats-icon icon-heart" #statsIcon></span>
+        <span #statsText>{{ user.hearts }}</span>
+      </li>
+    </ul>
+  </main>
+</div> -->
+
+<div #wrapper class="wrapper">
+    <header #header>
+      <div class="profile-image-wrapper">
+        <div class="profile-image-border" #profileImageBorder></div>
+        <img class="profile-image" #profileImage src="https://api.adorable.io/avatars/90/me@you.com.png" />
+      </div>
+      <div class="profile-header-content">
+        <span class="username" #username>{{ user.name }}</span>
+        <span class="username-title" #title>{{ user.title }}</span>
+      </div>
+    </header>
+    <main #main>
+      <ul class="stats">
+        <li class="stats-item">
+          <span class="stats-icon icon-eye" #statsIcon></span>
+          <span #statsText>{{ user.views }}</span>
+        </li>
+        <li class="stats-item">
+          <span class="stats-icon icon-location" #statsIcon></span>
+          <span #statsText>{{ user.location }}</span>
+        </li>
+        <li class="stats-item">
+          <span class="stats-icon icon-heart" #statsIcon></span>
+          <span #statsText>{{ user.hearts }}</span>
+        </li>
+      </ul>
+    </main>
+  </div>
