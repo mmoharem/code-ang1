@@ -1,0 +1,67 @@
+$atom-radius: 300px;
+.sat-container {
+    
+    // z-index: -20;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: red;
+    // background: red;
+}
+
+.sat-div {
+    // z-index: -20;
+    position: relative;
+    // border: solid 2px red;
+    border-radius: 50%;
+    // top: 50%;
+    // left: 50%;
+    // transform: translateX(-50%) translateY(-50%);
+    width: 600px;
+    height: 600px;
+    // transform: rotateZ(90deg) rotateY(60deg);
+
+  transform-style: preserve-3d;
+    // background-color: rgba(199, 18, 18, 0.267);
+
+}
+
+.sat-img {
+    position: inherit;
+    // transform: skewY(45deg);
+    // z-index: -10;
+    // top: calc(50% - 100px);
+    // left: calc(50% - 100px);
+    // transform: translateX(-50%) translateY(-50%);
+    // transform: rotateY(-60deg);
+    // animation: rotate 8s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotateZ(0deg) translateX($atom-radius);
+                // rotateZ(-0deg) rotateY(-60deg);
+                background: red;
+      }
+    25% {
+        transform: rotateZ(90deg) translateX($atom-radius);
+        background: purple;
+        
+    }
+
+    50% {
+        transform: rotateZ(180deg) translateX($atom-radius);
+        background: green;
+    }
+    100% {
+      transform: rotateZ(360deg) translateX($atom-radius);
+                // rotateZ(-360deg) rotateY(-60deg);  
+                background: blue;
+    }
+  }

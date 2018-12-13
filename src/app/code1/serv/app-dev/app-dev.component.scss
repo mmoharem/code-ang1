@@ -1,0 +1,57 @@
+.app-dev-serv--container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../../assets/img/cod/1/serv/back-we-des.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.web-des-serv{
+    &__shap {
+        position: absolute;
+        top: 27%;
+        left: 0;
+        width: 28vw;
+        // height: 200px;
+    }
+    
+    &__img {
+        position: absolute;
+        top: 45vh;
+        left: 10vw;
+        width: 30vw;
+        // height: 200px;
+    }
+
+    &__nav {
+        position: absolute;
+        top: 10%;
+        right: 50%;
+        transform: translateX(50%);
+        width: 80vw;
+        // height: 200px;
+    }
+
+    &__text {
+        position: absolute;
+        top: 32vh;
+        right: 8vw;
+        width: 37vw;
+        // height: 200px;
+        &--header {
+            margin-bottom: 4rem;
+            display: block;
+            // text-align: right;
+            font-size: 4rem;
+            color: #4AA2FF;
+            font-weight: 460;
+        }
+        &--text {
+            // text-align: right;
+            display: block;
+            font-size: 1.8rem;
+            color: #A8A8A8;
+        }
+    }
+}

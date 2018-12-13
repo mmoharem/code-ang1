@@ -1,0 +1,54 @@
+.css-atome-orbit {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+section {
+  padding-left: 300px;
+  // transform: rotateZ(45deg);
+}
+
+$atom-radius: 100px;
+$electron-radius: 30px;
+
+@mixin circle($radius) {
+  // border-radius: 50%;
+  width: $radius * 2;
+  height: $radius * 2;
+}
+
+.orbit {
+  @include circle($atom-radius);
+  position: relative;
+  // transform: rotateY(60deg);
+  // transform-style: preserve-3d;
+}
+.orbit {
+  border: solid 2px #ccc;
+  // background: gray;
+}
+
+.electron {
+  @include circle($electron-radius);
+  border-radius: 50%;
+  position: absolute;
+  top: $atom-radius - $electron-radius;
+  left: $atom-radius - $electron-radius;
+  // top: 0;
+  // left: 0;
+  background-color: #12d8f4;
+  // animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg) translateX($atom-radius)
+              rotateZ(-0deg) rotateY(-60deg);
+    }
+  100% {
+    transform: rotateZ(360deg) translateX($atom-radius)
+              rotateZ(-360deg) rotateY(-60deg);  
+  }
+}
+
+  

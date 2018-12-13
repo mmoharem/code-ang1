@@ -1,0 +1,52 @@
+.learn3d {
+  // padding: 90px;
+  margin: 30px;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.box1 {
+  width: 200px;
+  height: 200px;
+   border-top: solid 8px black;
+   border-left: solid 8px green;
+   border-bottom: solid 8px rgb(28, 3, 68);
+   border-right: solid 8px rgb(17, 14, 182);
+}
+
+.css-3d {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // perspective: 300;
+  transform-style: preserve-3d;
+
+  &__1 {
+    background: red;
+    // transform: rotate3d(90deg);
+    transform: skewX(-20deg);
+    
+  }
+
+  &__2 {
+    background: blueviolet;
+    transform: rotateX(60deg);
+    .sub2 {
+      transform: rotateX(60deg);
+    }
+  }
+
+  &__3 {
+    background: gray;
+    transform: rotateY(60deg);
+    .sub3 {
+      transform: rotateY(-60deg);
+    }
+  }
+
+  &__4 {
+    background: orangered;
+    transform: rotate(30deg);
+  }
+}

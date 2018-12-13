@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="nav-web-des" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 1160.9 37.8" style="enable-background:new 0 0 1160.9 37.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#A5B7C6;}
+	.st1{font-family:'MyriadPro-Regular';}
+	.st2{font-size:34.7402px;}
+	.st3{fill:#4AA2FF;}
+	.st4{fill:none;stroke:#F9FBFC;stroke-width:0.25;stroke-miterlimit:10;}
+	.st5{font-size:20.2651px;}
+</style>
+<g>
+	<text transform="matrix(1 0 0 1 0 29.0781)"><tspan x="0" y="0" class="st0 st1 st2">Code </tspan><tspan x="83.6" y="0" class="st3 st1 st2">Design</tspan></text>
+	<g>
+		<line class="st4" x1="679.9" y1="6.2" x2="679.9" y2="31.5"/>
+		<line class="st4" x1="855.8" y1="6.2" x2="855.8" y2="31.5"/>
+		<line class="st4" x1="1031.6" y1="6.2" x2="1031.6" y2="31.5"/>
+		<g>
+			<text transform="matrix(1 0 0 1 583.8721 24.0078)" class="st3 st1 st5">Home</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 734.415 24.0078)" class="st3 st1 st5">About Us</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 907.1484 24.0078)" class="st3 st1 st5">Services</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 1069.2715 24.0078)" class="st3 st1 st5">Contact Us</text>
+		</g>
+	</g>
+</g>
+</svg>

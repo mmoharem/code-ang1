@@ -124,7 +124,7 @@ export class Pixi4Component implements OnInit, AfterViewInit, OnChanges, OnDestr
     // if(this.resource){
     //   this.initTexture(this.resource);
     // }
-    this.loader.add('circle2', '../../../assets/img/circle2.json');
+    // this.loader.add('circle2', '../../../assets/img/circle2.json');
     // this.loader.load(this.initTexture);
     this.loader.load(() => {
       this.resource = PIXI.loader.resources.circle2.textures;
@@ -158,6 +158,7 @@ export class Pixi4Component implements OnInit, AfterViewInit, OnChanges, OnDestr
       this.particleContainer.addChild(cir);
       
     }
+    console.log(this.particles);
     this.ticker.add(this.animation, this);
   }
 
@@ -197,6 +198,7 @@ export class Pixi4Component implements OnInit, AfterViewInit, OnChanges, OnDestr
     }
     // this.renderer.render(this.particleContainer);
     this.app.stage.addChild(this.particleContainer);
+    
   }
 
   mousemove(e) {
@@ -207,6 +209,7 @@ export class Pixi4Component implements OnInit, AfterViewInit, OnChanges, OnDestr
   }
 
   onResize() {
+    
     // this.canvasW = this.canvas.offsetWidth;
     // this.canvasH = this.canvas.offsetHeight;
     // this.app.renderer.autoResize = true;

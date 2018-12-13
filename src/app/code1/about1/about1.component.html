@@ -1,0 +1,41 @@
+<div class="about">
+  <div class="about--wrapper">
+    <div class="about--back">
+
+      <div class="objects" (click)="onClick()">
+        <div class="about--text">
+          <h2 class="about--text_heading">
+            About Us
+          </h2>
+          <span class="about--text_text">
+            Code Designs is a complete web solutions & Design company. We help businesses develop their Design strategy
+            from ground and up. We understand the importance of Design DATA and use it to achieve business objectives.
+            Every business is different , we spend time understanding your process and add value by customizing
+            solutions based on your business goals and requirements. Cutting to the chase. Right from the start we are
+            committed to open communication, co-operation, and collaboration. We ensure that our clients receive the
+            most cost effective solutions without compromising on quality.
+          </span>
+        </div>
+        <div class="about-anime">
+          <div class="objects--pens" [@pens]="isHidden ? 'pensOut' : 'pensIn'">
+            
+            <img src="../../../assets/img/rev/about1/header_penpot.png" alt="">
+          </div>
+          <div class="objects--paper" [@paper]="isHidden ? 'paperOut' : 'paperIn'">
+            <img src="../../../assets/img/rev/about1/header_papers.png" alt="">
+          </div>
+          <div class="objects--plant" [@plant]="isHidden ? 'plantOut' : 'plantIn'">
+            
+            <img src="../../../assets/img/rev/about1/header_flowerpot.png" alt="">
+          </div>
+          <div class="objects--tablet">
+            <img src="../../../assets/img/rev/about1/header_tablet.png" alt="">
+          </div>
+          <div class="objects--styles">
+            <img src="../../../assets/img/rev/about1/header_pen.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

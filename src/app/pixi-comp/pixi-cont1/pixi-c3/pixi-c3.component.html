@@ -1,0 +1,32 @@
+<div class="hero-container">
+
+  <canvas class="canvas"
+  #canvas
+  (window:resize)="onResize()">
+
+    <!-- <pixi-c3-sub1></pixi-c3-sub1> -->
+
+    <pixi-c3-liquid-circle class="liquid"
+    [paused]="false" [autoWaves]="true"
+    (window:resize)="onResize()"></pixi-c3-liquid-circle>
+
+  </canvas>
+
+  <!-- <div class="logo"></div> -->
+
+  <!-- <h1 class="text-header">Code Design</h1> -->
+
+  <pixi-c3-content></pixi-c3-content>
+
+  <!-- <div class="helmet">
+    <div class="helmet-hole"></div>
+    <img src="./assets/img/helmet.png" alt="" class="helmet-img">
+  </div> -->
+
+  <pixi-c3-backGround class="back-container"></pixi-c3-backGround>
+
+  <pixi-c3-sub3></pixi-c3-sub3>
+
+</div>
+
+<!-- <pixi-c3-sub2></pixi-c3-sub2> -->

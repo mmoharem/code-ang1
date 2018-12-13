@@ -1,11 +1,16 @@
+import { Animate1Directive } from './code1/shared/directive/animate1.directive';
+import { PixiC3BackgroundComponent } from './pixi-comp/pixi-cont1/pixi-c3/pixi-c3-background.component';
+import { PixiC3Sub2Component } from './pixi-comp/pixi-cont1/pixi-c3/pixi-c3-sub2.component';
 import { ParticlesService2 } from './anim-lib/canvas/particls2/particles2.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
+
 
 import { AppComponent } from './app.component';
 import { Test1Component } from './shared/material/test1/test1.component';
 
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 import { MatComponentsModule } from "./shared/material/mat-components.module";
 import { AnimLibComponent } from './anim-lib/anim-lib.component';
 import { PixiComponent } from './anim-lib/pixi/pixi.component';
@@ -39,6 +44,25 @@ import { PixiCompComponent } from './pixi-comp/pixi-comp.component';
 import { PixiCont1Component } from './pixi-comp/pixi-cont1/pixi-cont1.component';
 import { PixiC1Component } from './pixi-comp/pixi-cont1/pixi-c1/pixi-c1.component';
 import { PixiC2Component } from './pixi-comp/pixi-cont1/pixi-c2/pixi-c2.component';
+import { PixiC3Component } from './pixi-comp/pixi-cont1/pixi-c3/pixi-c3.component';
+import { Pixi1Service } from './pixi-comp/pixi-cont1/shared/services/pixi1.service';
+import { PixiC4Component } from './pixi-comp/pixi-cont1/pixi-c4/pixi-c4.component';
+import { PixiC3Sub1Component } from './pixi-comp/pixi-cont1/pixi-c3/pixi-c3-sub1.component';
+import { PixiC3LiquidCircleComponent } from './pixi-comp/pixi-cont1/pixi-c3/pixi-c3-liquid-circle.component';
+import { CssComponent } from './anim-lib/css/css.component';
+import { AtomeOrbitComponent } from './anim-lib/css/atome-orbit/atome-orbit.component';
+import { PixiC3Sub3Component } from './pixi-comp/pixi-cont1/pixi-c3/pixi-c3-sub3.component';
+import { Learn3dComponent } from './anim-lib/css/learn3d/learn3d.component';
+import { PixiC3ContentComponent } from './pixi-comp/pixi-cont1/pixi-c3/pixi-c3-content-component';
+import { Code1Component } from './code1/code1.component';
+import { About1Component } from './code1/about1/about1.component';
+import { Serv1Component } from './code1/serv1/serv1.component';
+import { BetterScroll1Directive } from './code1/shared/directive/better-scroll1.directive';
+import { Scroll1Directive } from './code1/shared/directive/scroll1.directive';
+import { Serv2Component } from './code1/serv2/serv2.component';
+import { WebDesComponent } from './code1/serv/web-des/web-des.component';
+import { AppDevComponent } from './code1/serv/app-dev/app-dev.component';
+import { ECommComponent } from './code1/serv/e-comm/e-comm.component';
 
 
 @NgModule({
@@ -75,16 +99,40 @@ import { PixiC2Component } from './pixi-comp/pixi-cont1/pixi-c2/pixi-c2.componen
     PixiCompComponent,
     PixiCont1Component,
     PixiC1Component,
-    PixiC2Component
+    PixiC2Component,
+    PixiC4Component,
+    PixiC3Component,
+    PixiC3BackgroundComponent,
+    PixiC3ContentComponent,
+    PixiC3Sub1Component,
+    PixiC3Sub2Component,
+    PixiC3Sub3Component,
+    PixiC3LiquidCircleComponent,
+    CssComponent,
+    AtomeOrbitComponent,
+    Learn3dComponent,
+    Code1Component,
+    About1Component,
+    Serv1Component,
+    Animate1Directive,
+    BetterScroll1Directive,
+    Scroll1Directive,
+    Serv2Component,
+    //serve
+    WebDesComponent,
+    AppDevComponent,
+    ECommComponent
   ],
   imports: [
     BrowserModule,
-    MatComponentsModule
+    MatComponentsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
-    BrowserAnimationsModule,
+    
     ParticlesService,
-    ParticlesService2
+    ParticlesService2,
+    Pixi1Service
     
   ],
   bootstrap: [AppComponent]

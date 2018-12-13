@@ -59,7 +59,7 @@ export class PixiC1Component implements OnInit, OnDestroy, AfterViewInit, OnChan
 
   ngAfterViewInit(): void {
     this.zone.runOutsideAngular(() => {
-      this.initPixi();
+      // this.initPixi();
     });
   }
 
@@ -72,7 +72,7 @@ export class PixiC1Component implements OnInit, OnDestroy, AfterViewInit, OnChan
       if (this.paused) {
         this.ticker.stop();
       } else {
-        this.ticker.start();
+        // this.ticker.start();
       }
     }
   }
@@ -87,9 +87,10 @@ export class PixiC1Component implements OnInit, OnDestroy, AfterViewInit, OnChan
     // }
 
     const options = {
-      transparent: true,
+      // transparent: true,
       resolution: this.resolution,
-      antialias: false
+      antialias: true,
+      // forceCanvas: true
     };
 
     this.container = new PIXI.Container();
@@ -97,12 +98,15 @@ export class PixiC1Component implements OnInit, OnDestroy, AfterViewInit, OnChan
     this.app.renderer.view.style.display = 'block';
 
     this.domRenderer.appendChild(this.canvas.nativeElement, this.app.view);
-
+  
+    
     this.initCircle();
 
     this.ticker.add(this.onFrame, this);
+    
 
     this.onWavesTickerFrame();
+    
   }
 
   get canvasWidth() {
@@ -124,6 +128,7 @@ export class PixiC1Component implements OnInit, OnDestroy, AfterViewInit, OnChan
     }
 
     this.app.stage.addChild(this.container);
+    
 
     if (this.paused) {
       this.ticker.stop();
@@ -135,23 +140,23 @@ export class PixiC1Component implements OnInit, OnDestroy, AfterViewInit, OnChan
       return;
     }
 
-    const particlesCount = this.particles.length;
-    const target = this.rand(0, particlesCount - 1);
-    let speed = -4;
+    // const particlesCount = this.particles.length;
+    // const target = this.rand(0, particlesCount - 1);
+    // let speed = -4;
 
-    this.particles[this.mod(target - 3, particlesCount)].vy += speed / 8;
-    this.particles[this.mod(target - 3, particlesCount)].vy += speed / 7;
-    this.particles[this.mod(target - 3, particlesCount)].vy += speed / 6;
-    this.particles[this.mod(target - 2, particlesCount)].vy += speed / 5;
-    this.particles[this.mod(target - 1, particlesCount)].vy += speed / 4;
-    this.particles[this.mod(target, particlesCount)].vy += speed / 3;
-    this.particles[this.mod(target + 1, particlesCount)].vy += speed / 4;
-    this.particles[this.mod(target + 2, particlesCount)].vy += speed / 5;
-    this.particles[this.mod(target + 3, particlesCount)].vy += speed / 6;
-    this.particles[this.mod(target + 3, particlesCount)].vy += speed / 7;
-    this.particles[this.mod(target + 3, particlesCount)].vy += speed / 8;
+    // this.particles[this.mod(target - 3, particlesCount)].vy += speed / 8;
+    // this.particles[this.mod(target - 3, particlesCount)].vy += speed / 7;
+    // this.particles[this.mod(target - 3, particlesCount)].vy += speed / 6;
+    // this.particles[this.mod(target - 2, particlesCount)].vy += speed / 5;
+    // this.particles[this.mod(target - 1, particlesCount)].vy += speed / 4;
+    // this.particles[this.mod(target, particlesCount)].vy += speed / 3;
+    // this.particles[this.mod(target + 1, particlesCount)].vy += speed / 4;
+    // this.particles[this.mod(target + 2, particlesCount)].vy += speed / 5;
+    // this.particles[this.mod(target + 3, particlesCount)].vy += speed / 6;
+    // this.particles[this.mod(target + 3, particlesCount)].vy += speed / 7;
+    // this.particles[this.mod(target + 3, particlesCount)].vy += speed / 8;
 
-    this.calculating = true;
+    // this.calculating = true;
   }
 
   onResize() {
@@ -180,7 +185,7 @@ export class PixiC1Component implements OnInit, OnDestroy, AfterViewInit, OnChan
       this.container.removeChild(this.circleMask);
     }
 
-    const total = Math.ceil(this.canvasWidth / 10);
+    const total = Math.ceil(this.canvasWidth / 15);
     this.springs = [];
     this.particles = [];
 
@@ -211,7 +216,7 @@ export class PixiC1Component implements OnInit, OnDestroy, AfterViewInit, OnChan
       this.springs.push({ iLengthY: (this.particles[u + 1].y - this.particles[u].y) });
     }
 
-    let texture = PIXI.Texture.fromImage('/images/liquid-circle-background.jpg');
+    let texture = PIXI.Texture.fromImage('./assets/img/liquid-circle-background.jpg');
 
     this.circleRadius = this.canvasWidth / (2 * Math.PI);
     this.circle = new PIXI.Sprite(texture);
@@ -229,7 +234,8 @@ export class PixiC1Component implements OnInit, OnDestroy, AfterViewInit, OnChan
       if (data.target != this.circleMask) {
         return;
       }
-
+      // console.log(data);
+      
       this.mouseX = data.data.global.x;
       this.mouseY = data.data.global.y;
 
@@ -278,9 +284,11 @@ export class PixiC1Component implements OnInit, OnDestroy, AfterViewInit, OnChan
       const particlesCount = this.particles.length;
 
       if (speed > 50) {
-        speed = 50;
+        // speed = 50;
+        speed = 10;
       } else if (speed < -50) {
-        speed = -50;
+        // speed = -50;
+        speed = -10;
       }
 
       this.particles[this.mod(target - 2, particlesCount)].vy = speed / 6;
